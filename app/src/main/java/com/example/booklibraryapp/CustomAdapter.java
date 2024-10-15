@@ -14,16 +14,16 @@ import java.util.ArrayList;
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList book_id;
-    ArrayList book_title;
-    ArrayList book_author;
-    ArrayList book_pages;
+    ArrayList<String> book_id;
+    ArrayList<String> book_title;
+    ArrayList<String> book_author;
+    ArrayList<String> book_pages;
 
     CustomAdapter(Context context,
-                  ArrayList book_id,
-                  ArrayList book_title,
-                  ArrayList book_author,
-                  ArrayList book_pages) {
+                  ArrayList<String> book_id,
+                  ArrayList<String> book_title,
+                  ArrayList<String>book_author,
+                  ArrayList<String> book_pages) {
 
         this.context = context;
         this.book_id = book_id;

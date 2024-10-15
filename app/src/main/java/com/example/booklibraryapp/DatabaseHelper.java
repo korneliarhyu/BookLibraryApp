@@ -2,6 +2,7 @@ package com.example.booklibraryapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -46,6 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    //    method for insert data
     void addBook(String title, String author, int pages) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -66,4 +68,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
     }
+
+    Cursor readAllData(){
+        String query = " SELECT * FROM " + DATABASE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (db != null) {
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+
 }

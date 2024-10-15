@@ -1,7 +1,11 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">BookLibraryApp</string>
     <string name="book_title">Book Title</string>
     <string name="number_of_pages">Number of Pages</string>
     <string name="book_author">Book Author</string>
     <string name="textview">TextView</string>
+    <string name="author1" tools:ignore="Typos">Author1</string>
+    <string name="book_title_text">Title 1</string>
+    <string name="book_pages_text">100</string>
+    <string name="book_id_txt">1</string>
 </resources>

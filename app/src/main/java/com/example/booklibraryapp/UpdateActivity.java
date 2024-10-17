@@ -30,6 +30,8 @@ public class UpdateActivity extends AppCompatActivity {
         });
 
         getAndSetIntentData();
+        DatabaseHelper myDB = new DatabaseHelper(UpdateActivity.this);
+        myDB.updateData(id, title, author, pages);
     }
 
     void getAndSetIntentData() {

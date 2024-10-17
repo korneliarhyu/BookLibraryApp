@@ -35,9 +35,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                         COLUMN_TITLE + " TEXT, " +
                         COLUMN_AUTHOR + " TEXT," +
                         COLUMN_PAGES + " INTEGER);" ;
-
         db.execSQL(query);
-
         Log.d("Database", "Database Created: " + TABLE_NAME);
     }
 

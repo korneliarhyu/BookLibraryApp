@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         add_button.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick (View view) {
+                // untuk berpindah dari activity satu ke activity lain (pindah page).
                 Intent intent = new Intent(MainActivity.this, AddActivity.class);
                 startActivity(intent);
             }

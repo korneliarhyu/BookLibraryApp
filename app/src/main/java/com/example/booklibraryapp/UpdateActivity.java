@@ -1,6 +1,7 @@
 package com.example.booklibraryapp;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,9 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class UpdateActivity extends AppCompatActivity {
     EditText title_input, author_input, pages_input;
     Button update_button;
-
     String id, title, author, pages;
 
+    @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
@@ -28,15 +29,17 @@ public class UpdateActivity extends AppCompatActivity {
         update_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Log.d("update button", title_input.getText().toString());
                 DatabaseHelper myDB = new DatabaseHelper(UpdateActivity.this);
-                myDB.updateData(id, title, author, pages);
+                myDB.updateData(id, title_input.getText().toString(), author_input.getText().toString(), pages_input.getText().toString());
             }
         });
 
     }
 
     void getAndSetIntentData() {
-        if (getIntent().hasExtra("id") && getIntent().hasExtra("title") && getIntent().hasExtra("author") && getIntent().hasExtra("pages")){
+        if (getIntent().hasExtra("id") && getIntent().hasExtra("title") &&
+                getIntent().hasExtra("author") && getIntent().hasExtra("pages")){
 
             //getting data from intent
             id = getIntent().getStringExtra("id");
@@ -44,7 +47,7 @@ public class UpdateActivity extends AppCompatActivity {
             author = getIntent().getStringExtra("author");
             pages = getIntent().getStringExtra("pages");
 
-            //set data yang baru ke data yang lama
+            //set data dari intent ke board input di update activity
             title_input.setText(title);
             author_input.setText(author);
             pages_input.setText(pages);
